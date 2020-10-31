@@ -9,7 +9,6 @@ var HTTP_PORT = process.env.PORT || 3000;
 
 app.use(express.static(__dirname + "/views"));
 
-const urlencodedParser = bodyParser.urlencoded({ extended : false});
 
 app.get("/", function(req,res){
     res.sendFile(__dirname + "/views/index.html");
@@ -49,12 +48,6 @@ app.post('/form-reg', [
       return res.status(400).json({ errors: errors.array() });
     }
   });
-
-
-
-
-  
-
 
   app.listen(HTTP_PORT);
 
