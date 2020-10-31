@@ -7,10 +7,6 @@ const { body, validationResult } = require('express-validator');
 
 var HTTP_PORT = process.env.PORT || 3000;
 
-function onHttpStart() {
-  console.log("Express http server listening on: " + HTTP_PORT);
-}
-
 app.use(express.static(__dirname + "/views"));
 
 const urlencodedParser = bodyParser.urlencoded({ extended : false});
@@ -60,7 +56,7 @@ app.post('/form-reg', [
   
 
 
-app.listen(HTTP_PORT, onHttpStart);
+  app.listen(HTTP_PORT);
 
 
 
