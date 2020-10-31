@@ -11,12 +11,12 @@ app.use(express.static(__dirname + "/views"));
 
 
 app.get("/", function(req,res){
-    res.sendFile(__dirname + "/views/index.html");
+    res.send(__dirname + "/views/index.html");
    
 });
 
 app.get("/room", function(req,res){
-    res.sendfile(__dirname + "/views/roompage.html");
+    res.send(__dirname + "/views/roompage.html");
     
 });
 
