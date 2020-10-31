@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 const Handlebars = require("handlebars");
 const { body, validationResult } = require('express-validator');
 
-var HTTP_PORT = process.env.PORT || 3000;
+var HTTP_PORT = process.env.PORT;
 
 app.use(express.static(__dirname + "/views"));
 
