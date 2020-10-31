@@ -1,21 +1,22 @@
 const express = require('express');
-const aws = require('aws-sdk');
-
 const app = express();
-app.set('views', './views');
-app.use(express.static('./public'));
-app.engine('html', require('ejs').renderFile);
-app.listen(process.env.PORT || 3000);
+const path = require('path');
+const router = express.Router();
 
-const S3_BUCKET = process.env.S3_BUCKET;
+router.get('/',function(req,res){
+  res.sendFile(path.join(__dirname+'/index.html'));
+  //__dirname : It will resolve to your project folder.
+});
 
-var HTTP_PORT = process.env.PORT;
+router.get('/about',function(req,res){
+  res.sendFile(path.join(__dirname+'/roompage.html'));
+});
 
-app.get('/', (req, res) => res.render('index.html'));
-app.get('/room', (req, res) => res.render('roompage.html'));
+//add the router
+app.use('/', router);
+app.listen(process.env.port || 3000);
 
-
-  app.listen(HTTP_PORT);
+console.log('Running at Port 3000');
 
 
 
