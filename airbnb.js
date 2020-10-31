@@ -7,19 +7,8 @@ const { body, validationResult } = require('express-validator');
 
 var HTTP_PORT = process.env.PORT;
 
-app.use(express.static("/views"));
-
-
-app.get("/", function(req,res){
-    res.sendFile("/views/index.html");
-   
-});
-
-app.get("/room", function(req,res){
-    res.sendFile("/views/roompage.html");
-    
-});
-
+app.get('/', (req, res) => res.render('index.html'));
+app.get('/room', (req, res) => res.render('roompage.html'));
 
 
   app.listen(HTTP_PORT);
