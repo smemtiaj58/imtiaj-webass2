@@ -1,9 +1,13 @@
+const express = require('express');
+const aws = require('aws-sdk');
 
-var express = require("express");
-var app = express();
-var bodyParser = require('body-parser');
-const Handlebars = require("handlebars");
-const { body, validationResult } = require('express-validator');
+const app = express();
+app.set('views', './views');
+app.use(express.static('./public'));
+app.engine('html', require('ejs').renderFile);
+app.listen(process.env.PORT || 3000);
+
+const S3_BUCKET = process.env.S3_BUCKET;
 
 var HTTP_PORT = process.env.PORT;
 
