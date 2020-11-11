@@ -8,16 +8,17 @@ var HTTP_PORT = process.env.PORT || 3000;
 
 
 
-app.use(express.static(__dirname + "/views"));
+
+app.use(express.static(__dirname + "/Views"));
 
 
 app.get("/", function(req,res){
-    res.sendFile(__dirname + "/views/index.html");
+    res.sendFile(__dirname + "/Views/index.html");
    
 });
 
 app.get("/room", function(req,res){
-    res.sendfile(__dirname + "/views/roompage.html");
+    res.sendfile(__dirname + "/Views/roompage.html");
     
 });
 
