@@ -7,16 +7,16 @@ const { body, validationResult } = require('express-validator');
 var HTTP_PORT = process.env.PORT || 3000;
 
 
-app.use(express.static(__dirname + "/views"));
+app.use(express.static("./views"));
 
 
 app.get("/", function(req,res){
-    res.sendFile(__dirname + "/views/index.html");
+    res.sendFile(./views/index.html");
    
 });
 
 app.get("/room", function(req,res){
-    res.sendfile(__dirname + "/views/roompage.html");
+    res.sendfile(./views/roompage.html");
     
 });
 
