@@ -11,12 +11,12 @@ app.use(express.static("./views"));
 
 
 app.get("/", function(req,res){
-    res.sendFile(./views/index.html");
+    res.sendFile("./views/index.html");
    
 });
 
 app.get("/room", function(req,res){
-    res.sendfile(./views/roompage.html");
+    res.sendfile("./views/roompage.html");
     
 });
 
