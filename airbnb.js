@@ -1,4 +1,4 @@
-
+var express = require("express");
 var app = express();
 var bodyParser = require('body-parser');
 const Handlebars = require("handlebars");
@@ -50,7 +50,8 @@ app.post('/form-reg', [
   });
 
 
-
-
-
-  app.listen(HTTP_PORT);
+  app.listen(HTTP_PORT,onHttpStart);
+  
+  function onHttpStart() {
+    console.log("Express http server listening on: " + HTTP_PORT);
+}
