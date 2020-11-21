@@ -155,8 +155,9 @@ app.post('/form-reg', [
   app.listen(HTTP_PORT,onHttpStart);
   
   
-  */
+
   
   function onHttpStart() {
     console.log("Express http server listening on: " + HTTP_PORT);
 }
+  */
