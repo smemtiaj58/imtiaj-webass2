@@ -36,7 +36,7 @@ app.get("/room", function(req,res){
 
 app.post('/action_page', [
   
-  body('username').isEmail(),
+  body('email').isEmail(),
   body('password').isLength({ min: 5 })
 ], (req, res) => {
   const errors = validationResult(req);
